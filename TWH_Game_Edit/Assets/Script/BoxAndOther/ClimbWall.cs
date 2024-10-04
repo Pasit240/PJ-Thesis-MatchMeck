@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClimbWall : MonoBehaviour
 {
     private float vertical;
-    public float speed = 4f;
+    public float speed = 5f;
     public bool isLadder;
     public bool isClimbing;
 
@@ -28,7 +28,7 @@ public class ClimbWall : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
         }
 
-        else rb.gravityScale = 1f;
+        else rb.gravityScale = 3f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
