@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RespawnsTest : MonoBehaviour
 {
+    [SerializeField] Animator transitionRe;
+
     Vector2 checkpointPos;
     Rigidbody2D playerRb;
 
@@ -32,7 +34,15 @@ public class RespawnsTest : MonoBehaviour
 
     void Die()
     {
+        StartCoroutine(TimeCount(0f));
         StartCoroutine(Respawn(2f));
+    }
+
+    IEnumerator TimeCount(float duration)
+    {
+        transitionRe.SetTrigger("Start");
+        yield return new WaitForSeconds(1);
+        transitionRe.SetTrigger("Respawn");
     }
 
     IEnumerator Respawn(float duration)

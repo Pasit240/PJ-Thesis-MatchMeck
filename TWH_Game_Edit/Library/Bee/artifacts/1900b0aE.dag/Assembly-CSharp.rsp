@@ -445,6 +445,7 @@
 "Assets/Script/EnemyAi/EnemyRatAi.cs"
 "Assets/Script/EnemyAi/OnlyPatrol.cs"
 "Assets/Script/EnemyAi/Patrol2.cs"
+"Assets/Script/LoadNext.cs"
 "Assets/Script2/AiPatrol.cs"
 "Assets/Script2/CharacterContorl.cs"
 "Assets/Script2/DeliveryPoint/DeliveryPoint1.cs"
