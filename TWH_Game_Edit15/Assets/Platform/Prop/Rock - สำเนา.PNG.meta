@@ -298,7 +298,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Rock - \u0E2A\u0E33\u0E40\u0E19\u0E32_0": -6378730345316958824
+      "Rock - \u0E2A\u0E33\u0E40\u0E19\u0E32_1": 4689278121265175654
+      "Rock - \u0E2A\u0E33\u0E40\u0E19\u0E32_2": -6185094668532662805
+      "Rock - \u0E2A\u0E33\u0E40\u0E19\u0E32_3": -6593544065871995465
+      "Rock - \u0E2A\u0E33\u0E40\u0E19\u0E32_4": 3443222909353437714
+      "Rock - \u0E2A\u0E33\u0E40\u0E19\u0E32_5": 848523005967083058
+      "Rock - \u0E2A\u0E33\u0E40\u0E19\u0E32_6": 788772628027833227
+      "Rock - \u0E2A\u0E33\u0E40\u0E19\u0E32_7": 7806982105645794796
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -394,7 +394,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Tree - \u0E2A\u0E33\u0E40\u0E19\u0E32_0": 8100123954664020695
+      "Tree - \u0E2A\u0E33\u0E40\u0E19\u0E32_1": -7700699769534136947
+      "Tree - \u0E2A\u0E33\u0E40\u0E19\u0E32_10": 1623913311563049756
+      "Tree - \u0E2A\u0E33\u0E40\u0E19\u0E32_11": -7243987139461375250
+      "Tree - \u0E2A\u0E33\u0E40\u0E19\u0E32_2": 8845242719209712474
+      "Tree - \u0E2A\u0E33\u0E40\u0E19\u0E32_3": -4672226987718766860
+      "Tree - \u0E2A\u0E33\u0E40\u0E19\u0E32_4": 4351344436916617026
+      "Tree - \u0E2A\u0E33\u0E40\u0E19\u0E32_5": -714716221019891451
+      "Tree - \u0E2A\u0E33\u0E40\u0E19\u0E32_6": -5382263776284839464
+      "Tree - \u0E2A\u0E33\u0E40\u0E19\u0E32_7": 4935956922231762505
+      "Tree - \u0E2A\u0E33\u0E40\u0E19\u0E32_8": -7285563320700192495
+      "Tree - \u0E2A\u0E33\u0E40\u0E19\u0E32_9": 9058593372347042653
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
