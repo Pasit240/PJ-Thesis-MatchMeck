@@ -92,7 +92,7 @@ public class AvanceMove : MonoBehaviour
 
     public bool _canGrapRope;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Ladder"))
         {
@@ -121,18 +121,19 @@ public class AvanceMove : MonoBehaviour
 
         if (!attacth)
         {
-            if (collision.gameObject.CompareTag("Rope")/* && InputManager.SnapWasPressed*/ && !InputManager.JumpWasPressed)
-            {               
+            if (collision.gameObject.CompareTag("Rope")/* && InputManager.SnapWasPressed*/ /*&& !InputManager.JumpWasPressed*/)
+            {
+                _canGrapRope = true;
                 if (attachedTo != collision.gameObject.transform.parent)
                 {
                     if (disregard == null || collision.gameObject.transform.parent.gameObject != disregard)
                     {
-                        //if (InputManager.SnapWasPressed)
-                        //{
+                        if (InputManager.SnapWasPressed)
+                        {
                             Attach(collision.gameObject.GetComponent<Rigidbody2D>());
                             anim.SetBool("isClimp", true);
-                        //}
-                        //_canGrapRope = true;
+                        }
+                        
                         //Attach(collision.gameObject.GetComponent<Rigidbody2D>());
                         //anim.SetBool("isClimp", true);
                     }
@@ -230,7 +231,7 @@ public class AvanceMove : MonoBehaviour
 
             HorizontalVelucity = Mathf.Abs(MoveStats.WallJumpDirection.x) * dirMultiplier * 1.5f;
             VerticalVelocity = Mathf.Abs(MoveStats.WallJumpDirection.y) * 3;
-        }
+        }      
     }
 
     private void FixedUpdate()
@@ -279,6 +280,7 @@ public class AvanceMove : MonoBehaviour
         {
             if (attacth)
             {
+                GrabRopeTurnCheck(-1);
                 _rb.AddRelativeForce(new Vector3(-1, 0, 0) * _pushForce);
             }
         }
@@ -287,13 +289,25 @@ public class AvanceMove : MonoBehaviour
         {
             if (attacth)
             {
+                GrabRopeTurnCheck(1);
                 _rb.AddRelativeForce(new Vector3(1, 0, 0) * _pushForce);
             }
         }
 
+        int dirMultiplier = 0;
+                if (_isFacingRight)
+                {
+                    dirMultiplier = 1;
+                }
+                else if (!_isFacingRight)
+                {
+                    dirMultiplier = -1;
+                }
         if (InputManager.JumpWasPressed && _isGrapRope)
         {
-            Detach();
+            Detach();            
+            HorizontalVelucity = Mathf.Abs(MoveStats.WallJumpDirection.x) * dirMultiplier * 1f;
+            VerticalVelocity = Mathf.Abs(MoveStats.WallJumpDirection.y) * 1;      
         }
 
 
@@ -322,17 +336,20 @@ public class AvanceMove : MonoBehaviour
         anim.SetBool("isClimp", false);
     }
 
-    public void Slide(int direction)
+    public void GrabRopeTurnCheck(int direction)
     {
-        //if (_isFacingRight && direction < 0)
-        //{
-        //    Check(false);
-        //}
-        //else if (!_isFacingRight && direction > 0)
-        //{
-        //    Check(true);
-        //}
+        if (_isFacingRight && direction < 0)
+        {
+            Check(false);
+        }
+        else if (!_isFacingRight && direction > 0)
+        {
+            Check(true);
+        }
+    }
 
+    public void Slide(int direction)
+    {        
 
         RopeSegment myConnection = _hj.connectedBody.gameObject.GetComponent<RopeSegment>();
         GameObject newSeg = null;
@@ -489,27 +506,6 @@ public class AvanceMove : MonoBehaviour
         //    targetVelocity = moveInput.y * MoveStats.JumpHeight * MoveStats.ClimpMoveSpeedMultipler;
         //    VerticalVelocity = Mathf.Lerp(VerticalVelocity, targetVelocity, acceleration);
         //}
-
-        if (_isGrapRope)
-        {
-            GravutyTest(gameObject.GetComponent<Rigidbody2D>());
-            HorizontalVelucity = 0/*Mathf.Lerp(0, 0f, 0)*/;
-            if (InputManager.JumpWasPressed)
-            {
-                int dirMultiplier = 0;
-                if (_isFacingRight)
-                {
-                    dirMultiplier = 1;
-                }
-                else if (!_isFacingRight)
-                {
-                    dirMultiplier = -1;
-                }
-
-                HorizontalVelucity = Mathf.Abs(MoveStats.WallJumpDirection.x) * dirMultiplier * 1.5f;
-                VerticalVelocity = Mathf.Abs(MoveStats.WallJumpDirection.y) * 3;
-            }
-        }
 
         if (_isClimping && _isLadder && !isPush && !_isGrapRope)
         {

@@ -24,6 +24,7 @@ public class PlayerMovementStats : ScriptableObject
     public LayerMask JumpPadLayerMask;
     public LayerMask GroundLayerMask;
     public LayerMask CanClimpLayerMask;
+    public LayerMask RopeLayerMask;
 
     [Header("Grounded/Collision Checks")]    
     public float GroundDetectionRayLength = 0.05f;

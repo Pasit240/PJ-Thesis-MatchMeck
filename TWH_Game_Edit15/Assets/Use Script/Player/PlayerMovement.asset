@@ -35,6 +35,9 @@ MonoBehaviour:
   CanClimpLayerMask:
     serializedVersion: 2
     m_Bits: 4096
+  RopeLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   GroundDetectionRayLength: 0.01
   HeadDetectionRayLength: 0.02
   HeadWidth: 0.75
