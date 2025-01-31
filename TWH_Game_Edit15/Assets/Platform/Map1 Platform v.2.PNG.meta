@@ -103,10 +103,10 @@ TextureImporter:
       name: Map1 Platform v.2_0
       rect:
         serializedVersion: 2
-        x: 587
-        y: 228
-        width: 3826
-        height: 3772
+        x: 0
+        y: 2667
+        width: 1666
+        height: 1333
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,10 +120,178 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Map1 Platform v.2_1
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 2667
+        width: 1666
+        height: 1333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255dd1f9c05ba4b4a93e4da289771bd9
+      internalID: -1058407300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map1 Platform v.2_2
+      rect:
+        serializedVersion: 2
+        x: 3332
+        y: 2667
+        width: 1666
+        height: 1333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41436cdda061bec41bd17d0db7a8de88
+      internalID: 286737312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map1 Platform v.2_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1334
+        width: 1666
+        height: 1333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bbeeed65cd3597449f346398df7e09d
+      internalID: -811779458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map1 Platform v.2_4
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 1334
+        width: 1666
+        height: 1333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae65811dad70a694cb47ffe7f57027c8
+      internalID: 1921672011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map1 Platform v.2_5
+      rect:
+        serializedVersion: 2
+        x: 3332
+        y: 1334
+        width: 1666
+        height: 1333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 395603d84d85e814c9cf6c089dd787c4
+      internalID: 907027526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map1 Platform v.2_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 1666
+        height: 1333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef0f739777b5f1418864c0c80aa7b12
+      internalID: 550651657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map1 Platform v.2_7
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 1
+        width: 1666
+        height: 1333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22465ef91f13f2344a2b9d48cfde6a92
+      internalID: 734688915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Map1 Platform v.2_8
+      rect:
+        serializedVersion: 2
+        x: 3332
+        y: 1
+        width: 1666
+        height: 1333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ee28d4d862a7241947b5371666bb62
+      internalID: 71339623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 22f65fba10221024eac7b7b90beb0911
     internalID: 0
     vertices: []
     indices: 
@@ -132,6 +300,14 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Map1 Platform v.2_0: 5092185255459958497
+      Map1 Platform v.2_1: -1058407300
+      Map1 Platform v.2_2: 286737312
+      Map1 Platform v.2_3: -811779458
+      Map1 Platform v.2_4: 1921672011
+      Map1 Platform v.2_5: 907027526
+      Map1 Platform v.2_6: 550651657
+      Map1 Platform v.2_7: 734688915
+      Map1 Platform v.2_8: 71339623
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
