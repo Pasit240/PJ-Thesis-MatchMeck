@@ -92,6 +92,8 @@ public class AvanceMove : MonoBehaviour
 
     public bool _canGrapRope;
 
+    public bool _test;
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Ladder"))
@@ -119,27 +121,31 @@ public class AvanceMove : MonoBehaviour
             collision.transform.SetParent(this.transform);
         }
 
-        if (!attacth)
-        {
-            if (collision.gameObject.CompareTag("Rope")/* && InputManager.SnapWasPressed*/ /*&& !InputManager.JumpWasPressed*/)
+
+        
+
+            if (!attacth)
             {
-                _canGrapRope = true;
-                if (attachedTo != collision.gameObject.transform.parent)
+                if (collision.gameObject.CompareTag("Rope") && _test)
                 {
-                    if (disregard == null || collision.gameObject.transform.parent.gameObject != disregard)
+                    _canGrapRope = true;
+                    if (attachedTo != collision.gameObject.transform.parent)
                     {
-                        if (InputManager.SnapWasPressed)
+                        if (disregard == null || collision.gameObject.transform.parent.gameObject != disregard)
                         {
-                            Attach(collision.gameObject.GetComponent<Rigidbody2D>());
-                            anim.SetBool("isClimp", true);
+                            //if (InputManager.SnapWasPressed)
+                            //{
+                                Attach(collision.gameObject.GetComponent<Rigidbody2D>());
+                                anim.SetBool("isClimp", true);
+                            //}
+
+                            //Attach(collision.gameObject.GetComponent<Rigidbody2D>());
+                            //anim.SetBool("isClimp", true);
                         }
-                        
-                        //Attach(collision.gameObject.GetComponent<Rigidbody2D>());
-                        //anim.SetBool("isClimp", true);
                     }
                 }
             }
-        }
+        
     }
 
 
@@ -166,7 +172,7 @@ public class AvanceMove : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Rope"))
         {
-            _canGrapRope = false;             
+            _canGrapRope = false;
         }
     }
 
@@ -189,7 +195,15 @@ public class AvanceMove : MonoBehaviour
 
     private void Update()
     {
-        CheckInputData();
+        if (InputManager.SnapWasPressed && !_canGrapRope)
+        {
+            _test = true;
+        }
+        else if(_test)
+        {
+            StartCoroutine(GrabDelay(0.01f));
+        }
+            CheckInputData();
         inputX = Input.GetAxisRaw("Horizontal");
         inputY = Input.GetAxisRaw("Vertical");
         if (_canSnap && InputManager.SnapWasPressed && !_isSnap)
@@ -217,7 +231,7 @@ public class AvanceMove : MonoBehaviour
         //    anim.SetBool("isJump", true);
         //}
 
-        if (InputManager.JumpWasPressed && _isClimping && !_isGrounded && _canSnap)
+        if (InputManager.JumpWasPressed && _isClimping && !_isGrounded && !_canSnap)
         {
             int dirMultiplier = 0;
             if (_isFacingRight)
@@ -306,8 +320,8 @@ public class AvanceMove : MonoBehaviour
         if (InputManager.JumpWasPressed && _isGrapRope)
         {
             Detach();            
-            HorizontalVelucity = Mathf.Abs(MoveStats.WallJumpDirection.x) * dirMultiplier * 1f;
-            VerticalVelocity = Mathf.Abs(MoveStats.WallJumpDirection.y) * 1;      
+            HorizontalVelucity = Mathf.Abs(MoveStats.WallJumpDirection.x) * dirMultiplier * 1.1f;
+            VerticalVelocity = Mathf.Abs(MoveStats.WallJumpDirection.y) * 1.1f;      
         }
 
 
@@ -1184,5 +1198,11 @@ public class AvanceMove : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         _isGrounded = false;
+    }
+
+    IEnumerator GrabDelay(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        _test = false;
     }
 }
