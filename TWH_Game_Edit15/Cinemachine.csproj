@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F6A44E42-BCB8-0896-D255-369CF0C25B9B}</ProjectGuid>
+    <ProjectGuid>{889ADEF5-239F-92C9-862F-32DA7DC12061}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Cinemachine</AssemblyName>
@@ -1125,23 +1125,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{18D73730-ED39-221E-6670-AA59BC7CBD5C}</Project>
+      <Project>{487838F6-AB2D-A7DC-84C8-33AF15E61077}</Project>
       <Name>Unity.Timeline</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.PixelPerfect.csproj">
-      <Project>{01B5936A-FB5D-F063-59B6-6084B13F6D82}</Project>
+      <Project>{97CC97D8-80C3-AC4A-5FE2-BD71769C42B7}</Project>
       <Name>Unity.2D.PixelPerfect</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InputSystem.csproj">
-      <Project>{0DB44616-86E8-BCCB-B4C9-21E40FC633A0}</Project>
+      <Project>{F57F8E44-C7A5-5FED-5ED2-2DB5B5F32FDD}</Project>
       <Name>Unity.InputSystem</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{033D51B9-3AF4-DD89-0F11-0342B3F33470}</Project>
+      <Project>{9FDC32D2-1E18-E9D0-D298-ABC53E448E8B}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{9A7B42A8-26AC-BBB1-FF97-7EFA8ED9B589}</Project>
+      <Project>{2949D51C-DA5C-8781-C127-7846D1254BBF}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
   </ItemGroup>
