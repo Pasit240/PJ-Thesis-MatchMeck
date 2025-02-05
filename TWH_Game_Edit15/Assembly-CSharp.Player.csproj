@@ -168,7 +168,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Script2\RespawnItem\ReCryan.cs" />
     <Compile Include="Assets\Script\Character\Movement2.cs" />
-    <Compile Include="Assets\Use Script\UiMenu\RunMenu.cs" />
     <Compile Include="Assets\Script2\PlayerMove\PlayerAnimation.cs" />
     <Compile Include="Assets\Use Script\PlayerControl.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />

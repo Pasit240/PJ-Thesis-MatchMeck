@@ -96,8 +96,8 @@ public class AvanceMove : MonoBehaviour
 
     public bool _RopeFoce;
 
-    [SerializeField] private AudioClip _moveSound;
-    [SerializeField] private AudioClip _jumpSound;
+    //[SerializeField] private AudioClip _moveSound;
+    //[SerializeField] private AudioClip _jumpSound;
 
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -330,7 +330,7 @@ public class AvanceMove : MonoBehaviour
         }
         if (InputManager.JumpWasPressed && _isGrapRope)
         {
-            SoundManager.instance.PlaySound(_jumpSound);
+            //SoundManager.instance.PlaySound(_jumpSound);
             Detach();
             HorizontalVelucity = Mathf.Abs(MoveStats.WallJumpDirection.x) * dirMultiplier * 1.0f;
             VerticalVelocity = Mathf.Abs(MoveStats.WallJumpDirection.y) * 1.3f;
@@ -497,10 +497,10 @@ public class AvanceMove : MonoBehaviour
             HorizontalVelucity = Mathf.Lerp(HorizontalVelucity, targetVelocity, acceleration * Time.deltaTime);
         }
 
-        if (InputManager._climpAIsHeld || InputManager._climpAIsHeld && !_isGrapRope && _isGrounded)
-        {
-            SoundManager.instance.PlaySound(_moveSound);
-        }
+        //if (InputManager._climpAIsHeld || InputManager._climpDIsHeld && !_isGrapRope && _isGrounded)
+        //{
+        //    SoundManager.instance.PlaySound(_moveSound);
+        //}
 
         else if (Mathf.Abs(moveInput.x) >= MoveStats.MoveThreshold && isPush && _isGrounded && !_isGrapRope/*&& !_isClimping*/)
         {
@@ -638,7 +638,7 @@ public class AvanceMove : MonoBehaviour
         {
             anim.SetBool("isJump", true);
             VerticalVelocity = MoveStats.IntitialJumpVelocity * MoveStats.JumpPadHeightMultiplier;
-            SoundManager.instance.PlaySound(_jumpSound);
+            //SoundManager.instance.PlaySound(_jumpSound);
         }
         else
         {
@@ -715,7 +715,7 @@ public class AvanceMove : MonoBehaviour
 
             if (_isGrounded && InputManager.JumpWasPressed)
             {
-                SoundManager.instance.PlaySound(_jumpSound);
+                //SoundManager.instance.PlaySound(_jumpSound);
             }
         }
 

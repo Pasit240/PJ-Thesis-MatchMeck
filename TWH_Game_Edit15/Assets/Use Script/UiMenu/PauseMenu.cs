@@ -17,9 +17,12 @@ public class PauseMenu : MonoBehaviour
     //    }
     //}
 
+    public bool _isPause;
+
     private void Start()
     {
         pauseMenu.SetActive(false);
+        _isPause = false;
     }
 
     public void Continue()
@@ -27,6 +30,28 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
         runMenu.SetActive(true);
+        _isPause = false;
+    }
+
+    public void Puase()
+    {
+        Time.timeScale = 0f;
+        runMenu.SetActive(false);
+        pauseMenu.SetActive(true);
+        _isPause = true;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !_isPause)
+        {
+            Puase();
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Escape) && _isPause)
+        {
+            Continue();
+        }
     }
 
     public void RestartGame()
