@@ -184,8 +184,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Use Script\Platform\SwingPlatform.cs" />
     <Compile Include="Assets\Script2\Test\Test.cs" />
-    <Compile Include="Assets\Script2\PickupItem.cs" />
     <Compile Include="Assets\Use Script\Palalax\NewPalalax.cs" />
+    <Compile Include="Assets\Script2\PickupItem.cs" />
     <Compile Include="Assets\Script2\RespawnItem\ReGreen.cs" />
     <Compile Include="Assets\Use Script\UiMenu\MainMenu.cs" />
     <Compile Include="Assets\Script\BoxAndOther\CameraLock.cs" />
