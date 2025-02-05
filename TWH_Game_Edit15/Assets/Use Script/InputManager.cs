@@ -31,6 +31,8 @@ public class InputManager : MonoBehaviour
     public static bool _climpAIsHeld;
     public static bool _climpDIsHeld;
 
+    public static bool _climpAWasPressed;
+    public static bool _climpDWasPressed;
 
     private void Awake()
     {
@@ -55,7 +57,7 @@ public class InputManager : MonoBehaviour
 
         JumpWasPressed = _jumpAction.WasPressedThisFrame();
         JumpIsHeld = _jumpAction.IsPressed();
-        JumpWasReleased =_jumpAction.WasReleasedThisFrame();
+        JumpWasReleased = _jumpAction.WasReleasedThisFrame();
 
         SnapWasPressed = _snapAction.WasPressedThisFrame();
 
@@ -63,10 +65,13 @@ public class InputManager : MonoBehaviour
 
         _climpWIsHeld = _climpW.WasPressedThisFrame();
         _climpSIsHeld = _climpS.WasPressedThisFrame();
-        _climpAIsHeld = _climpA.WasPressedThisFrame();
-        _climpDIsHeld = _climpD.WasPressedThisFrame();
+        _climpAIsHeld = _climpA.IsPressed();
+        _climpDIsHeld = _climpD.IsPressed();
+
+        _climpAWasPressed = _climpA.WasPressedThisFrame();
+        _climpDWasPressed = _climpD.WasPressedThisFrame();
+
 
         //RunIsHeld = _runAction.IsPressed();
     }
-
 }

@@ -99,6 +99,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Script\BoxAndOther\GrabOj_test.cs" />
     <Compile Include="Assets\Use Script\RopeScript\RopeBase.cs" />
+    <Compile Include="Assets\Use Script\SoundManager.cs" />
     <Compile Include="Assets\Script2\CharacterContorl.cs" />
     <Compile Include="Assets\Script\Character\FollowDisable.cs" />
     <Compile Include="Assets\Script2\RespawnItem\ReYellow.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="Assets\Script2\FoliowCamera.cs" />
     <Compile Include="Assets\Script2\Endpoint.cs" />
     <Compile Include="Assets\Script\EnemyAi\OnlyPatrol.cs" />
+    <Compile Include="Assets\Use Script\Palalax\PalalaxManager.cs" />
     <Compile Include="Assets\Use Script\RopeScript\GrabRopeTest.cs" />
     <Compile Include="Assets\Script2\Sound.cs" />
     <Compile Include="Assets\Use Script\Snapping\SnapClimping.cs" />
@@ -183,6 +185,7 @@
     <Compile Include="Assets\Use Script\Platform\SwingPlatform.cs" />
     <Compile Include="Assets\Script2\Test\Test.cs" />
     <Compile Include="Assets\Script2\PickupItem.cs" />
+    <Compile Include="Assets\Use Script\Palalax\NewPalalax.cs" />
     <Compile Include="Assets\Script2\RespawnItem\ReGreen.cs" />
     <Compile Include="Assets\Use Script\UiMenu\MainMenu.cs" />
     <Compile Include="Assets\Script\BoxAndOther\CameraLock.cs" />

@@ -11,6 +11,8 @@ public class Checkpoint : MonoBehaviour
     //public Sprite passive, active;
     Collider2D coll;
 
+    [SerializeField] private AudioClip _checkpointSound;
+
     private void Awake()
     {
         respawns = GameObject.FindGameObjectWithTag("Player").GetComponent<RespawnsTest>();
@@ -25,6 +27,7 @@ public class Checkpoint : MonoBehaviour
             respawns.UpdateCheckpoint(respawnPoint.position);
             //spriteRenderer.sprite = active;
             coll.enabled = false;
+            SoundManager.instance.PlaySound(_checkpointSound);
         }
     }
 }

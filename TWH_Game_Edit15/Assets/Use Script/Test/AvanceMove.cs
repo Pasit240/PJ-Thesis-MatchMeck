@@ -94,6 +94,12 @@ public class AvanceMove : MonoBehaviour
 
     public bool _test;
 
+    public bool _RopeFoce;
+
+    [SerializeField] private AudioClip _moveSound;
+    [SerializeField] private AudioClip _jumpSound;
+
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Ladder"))
@@ -290,42 +296,47 @@ public class AvanceMove : MonoBehaviour
             Slide(-1);
         }
 
-        if (InputManager._climpDIsHeld)
+        if (InputManager._climpDIsHeld && _RopeFoce)
         {
-            if (attacth)
+            if (attacth && _RopeFoce && !InputManager.JumpWasPressed)
             {
                 GrabRopeTurnCheck(-1);
                 _rb.AddRelativeForce(new Vector3(-1, 0, 0) * _pushForce);
             }
         }
 
-        if (InputManager._climpAIsHeld)
+        if (InputManager._climpAIsHeld && _RopeFoce)
         {
-            if (attacth)
+            if (attacth && _RopeFoce && !InputManager.JumpWasPressed)
             {
                 GrabRopeTurnCheck(1);
                 _rb.AddRelativeForce(new Vector3(1, 0, 0) * _pushForce);
             }
         }
 
-        int dirMultiplier = 0;
-                if (_isFacingRight)
-                {
-                    dirMultiplier = 1;
-                }
-                else if (!_isFacingRight)
-                {
-                    dirMultiplier = -1;
-                }
-        if (InputManager.JumpWasPressed && _isGrapRope)
+        if (InputManager._climpAWasPressed || InputManager._climpDWasPressed)
         {
-            Detach();            
-            HorizontalVelucity = Mathf.Abs(MoveStats.WallJumpDirection.x) * dirMultiplier * 1.1f;
-            VerticalVelocity = Mathf.Abs(MoveStats.WallJumpDirection.y) * 1.1f;      
+            _RopeFoce = true;
         }
 
-
+        int dirMultiplier = 0;
+        if (_isFacingRight)
+        {
+            dirMultiplier = 1;
+        }
+        else if (!_isFacingRight)
+        {
+            dirMultiplier = -1;
+        }
+        if (InputManager.JumpWasPressed && _isGrapRope)
+        {
+            SoundManager.instance.PlaySound(_jumpSound);
+            Detach();
+            HorizontalVelucity = Mathf.Abs(MoveStats.WallJumpDirection.x) * dirMultiplier * 1.0f;
+            VerticalVelocity = Mathf.Abs(MoveStats.WallJumpDirection.y) * 1.3f;
+        }
     }
+
 
     public void Attach(Rigidbody2D RopeBone)
     {
@@ -486,6 +497,11 @@ public class AvanceMove : MonoBehaviour
             HorizontalVelucity = Mathf.Lerp(HorizontalVelucity, targetVelocity, acceleration * Time.deltaTime);
         }
 
+        if (InputManager._climpAIsHeld || InputManager._climpAIsHeld && !_isGrapRope && _isGrounded)
+        {
+            SoundManager.instance.PlaySound(_moveSound);
+        }
+
         else if (Mathf.Abs(moveInput.x) >= MoveStats.MoveThreshold && isPush && _isGrounded && !_isGrapRope/*&& !_isClimping*/)
         {
             TurnCheck(moveInput);
@@ -622,6 +638,7 @@ public class AvanceMove : MonoBehaviour
         {
             anim.SetBool("isJump", true);
             VerticalVelocity = MoveStats.IntitialJumpVelocity * MoveStats.JumpPadHeightMultiplier;
+            SoundManager.instance.PlaySound(_jumpSound);
         }
         else
         {
@@ -653,7 +670,7 @@ public class AvanceMove : MonoBehaviour
         }
         else
         {
-            StartCoroutine(JumpDelay(0.01f));
+            StartCoroutine(JumpDelay(0.02f));
             anim.SetBool("isOnGround", false);
             //_isGrounded = false;
         }
@@ -695,6 +712,11 @@ public class AvanceMove : MonoBehaviour
 
             _jumpBufferTimer = MoveStats.JumpBufferTime;
             _jumpReleaseDuringBuffer = false;
+
+            if (_isGrounded && InputManager.JumpWasPressed)
+            {
+                SoundManager.instance.PlaySound(_jumpSound);
+            }
         }
 
         //ReleaseJump
