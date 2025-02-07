@@ -490,7 +490,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Game_logo_0: 6457735469926561385
+      Game_logo_1: -2399562587246865103
+      Game_logo_10: -7712823268712031318
+      Game_logo_11: -4926941233765422039
+      Game_logo_12: 7157197608036542368
+      Game_logo_13: 4912303203905898826
+      Game_logo_14: 1770324819845528277
+      Game_logo_15: 5553648717256566616
+      Game_logo_2: 1197467741079495219
+      Game_logo_3: -3896949620904792442
+      Game_logo_4: -7474367566471194690
+      Game_logo_5: 1537243854935690198
+      Game_logo_6: 3821156298639007902
+      Game_logo_7: 78133287073866274
+      Game_logo_8: 6217710194345851615
+      Game_logo_9: 3390140730790916339
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
