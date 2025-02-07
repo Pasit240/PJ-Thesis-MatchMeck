@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject runMenu;
 
+    public GameObject EndDemo;
+
     //private void Update()
     //{
 
@@ -18,11 +20,24 @@ public class PauseMenu : MonoBehaviour
     //}
 
     public bool _isPause;
+    public bool _isEndDemo;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            pauseMenu.SetActive(false);
+            EndDemo.SetActive(true);
+            Time.timeScale = 0f;
+            _isEndDemo = true;
+        }
+    }
 
     private void Start()
     {
         pauseMenu.SetActive(false);
         _isPause = false;
+        EndDemo.SetActive(false);
     }
 
     public void Continue()
@@ -43,12 +58,12 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !_isPause)
+        if (Input.GetKeyDown(KeyCode.Escape) && !_isPause && !_isEndDemo)
         {
             Puase();
         }
 
-        else if (Input.GetKeyDown(KeyCode.Escape) && _isPause)
+        else if (Input.GetKeyDown(KeyCode.Escape) && _isPause && !_isEndDemo)
         {
             Continue();
         }
@@ -56,8 +71,11 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.GetActiveScene();
-        Time.timeScale = 1f;
+        int scene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        Time.timeScale = 1;
+        //SceneManager.GetActiveScene();
+        //Time.timeScale = 1f;
     }
 
     public void MainMenu()

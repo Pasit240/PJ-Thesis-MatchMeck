@@ -63,13 +63,16 @@
   <ItemGroup>
     <Compile Include="Assets\Use Script\Player\Controls.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Use Script\UiMenu\Tutorial\Move.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Script2\DeliveryPoint\DeliveryPoint6.cs" />
     <Compile Include="Assets\Script2\RespawnItem\RePurple.cs" />
+    <Compile Include="Assets\Use Script\UiMenu\Tutorial\jump.cs" />
     <Compile Include="Assets\Platform\Materials\ParallaxController.cs" />
     <Compile Include="Assets\Script\EnemyAi\EnemyPatrol.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Script\EnemyAi\EnemyMove.cs" />
+    <Compile Include="Assets\Use Script\UiMenu\Tutorial\JumpB.cs" />
     <Compile Include="Assets\Script\EnemyAi\AiPlayerDetector.cs" />
     <Compile Include="Assets\Script\EnemyAi\AiPlayerEnterAreaDetector.cs" />
     <Compile Include="Assets\Use Script\Platform\InVerseST.cs" />
@@ -115,6 +118,7 @@
     <Compile Include="Assets\Use Script\Platform\FnSwing.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Script2\Ui\TimeScore.cs" />
+    <Compile Include="Assets\Use Script\UiMenu\Tutorial\Rope.cs" />
     <Compile Include="Assets\Script\Character\Respawns.cs" />
     <Compile Include="Assets\Script2\PlayerMove\SoundMove.cs" />
     <Compile Include="Assets\Use Script\UiMenu\PauseMenu.cs" />
@@ -137,6 +141,7 @@
     <Compile Include="Assets\Script\BoxAndOther\HoleDoor.cs" />
     <Compile Include="Assets\Script2\RespawnPlayer2.cs" />
     <Compile Include="Assets\Use Script\Test\AvanceMove.cs" />
+    <Compile Include="Assets\Use Script\UiMenu\Tutorial\WallJ.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Script\Character\PlayerSwitch.cs" />
     <Compile Include="Assets\Use Script\Player\PlayerMovement.cs" />
