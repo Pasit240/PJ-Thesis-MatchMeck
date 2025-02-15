@@ -109,10 +109,10 @@
     <Compile Include="Assets\Use Script\Player\PlayerMovementStats.cs" />
     <Compile Include="Assets\Script\EnemyAi\Patrol2.cs" />
     <Compile Include="Assets\Script2\RespawnItem\ReRed.cs" />
-    <Compile Include="Assets\Script\BoxAndOther\Jumppad.cs" />
     <Compile Include="Assets\Script2\Door\MainDoor.cs" />
     <Compile Include="Assets\Use Script\Test\MaterialOpacity.cs" />
     <Compile Include="Assets\Script2\Navigate2.cs" />
+    <Compile Include="Assets\Use Script\Jumppad no use\RightJumppad.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Script\Character\RespawnsTest.cs" />
     <Compile Include="Assets\Use Script\Platform\FnSwing.cs" />
@@ -172,6 +172,7 @@
     <Compile Include="Assets\Script\BoxAndOther\LadderMovement.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Script2\RespawnItem\ReCryan.cs" />
+    <Compile Include="Assets\Use Script\Jumppad no use\LeftJumppad.cs" />
     <Compile Include="Assets\Script\Character\Movement2.cs" />
     <Compile Include="Assets\Script2\PlayerMove\PlayerAnimation.cs" />
     <Compile Include="Assets\Use Script\PlayerControl.cs" />
@@ -179,6 +180,7 @@
     <Compile Include="Assets\Script\Character\FallingPlatform.cs" />
     <Compile Include="Assets\Script2\Menu\SettingMenu.cs" />
     <Compile Include="Assets\Script\BoxAndOther\Checkpoint.cs" />
+    <Compile Include="Assets\Use Script\Jumppad no use\Jumppad.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Script\BoxAndOther\Winning.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />

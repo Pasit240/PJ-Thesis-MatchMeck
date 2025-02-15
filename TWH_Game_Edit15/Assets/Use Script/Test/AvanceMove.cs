@@ -81,7 +81,7 @@ public class AvanceMove : MonoBehaviour
 
     float distance = 1;
     public LayerMask boxMask;
-    private bool isPush;
+    public bool isPush;
 
     GameObject box;
 
@@ -95,6 +95,11 @@ public class AvanceMove : MonoBehaviour
     public bool _test;
 
     public bool _RopeFoce;
+
+    public bool _isTouchingjumpPadLeft;
+    public bool _isTouchingjumpPadRight;
+
+    public float verticalForce = 1;
 
     //[SerializeField] private AudioClip _moveSound;
     //[SerializeField] private AudioClip _jumpSound;
@@ -151,7 +156,32 @@ public class AvanceMove : MonoBehaviour
                     }
                 }
             }
-        
+
+        if (collision.gameObject.CompareTag("JumpPadLeft"))
+        {
+            _isTouchingjumpPadLeft = true;
+        }
+        if (collision.gameObject.CompareTag("JumpPadRight"))
+        {
+            _isTouchingjumpPadRight = true;
+        }
+
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            box.GetComponent<FixedJoint2D>().enabled = false;
+            box.GetComponent<BoxPull>().beingPushed = false;
+            isPush = false;
+        }      
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            box.GetComponent<FixedJoint2D>().enabled = false;
+            box.GetComponent<BoxPull>().beingPushed = false;
+            isPush = false;
+        }
     }
 
 
@@ -179,6 +209,22 @@ public class AvanceMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Rope"))
         {
             _canGrapRope = false;
+        }
+
+        if (collision.gameObject.CompareTag("JumpPadLeft"))
+        {
+            _isTouchingjumpPadLeft = false;
+        }
+        if (collision.gameObject.CompareTag("JumpPadRight"))
+        {
+            _isTouchingjumpPadRight = false;
+        }
+
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            box.GetComponent<FixedJoint2D>().enabled = false;
+            box.GetComponent<BoxPull>().beingPushed = false;
+            isPush = false;
         }
     }
 
@@ -264,6 +310,9 @@ public class AvanceMove : MonoBehaviour
         _isDashing = false;
 
         JumpPadWhenTouchCheck();
+
+        //JumpPadWhenTouchRight();
+        //JumpPadWhenTouchLeft();
 
         if (_isGrounded)
         {
@@ -486,7 +535,7 @@ public class AvanceMove : MonoBehaviour
 
     private void Move(float acceleration, float deceleration, Vector2 moveInput)
     {
-        if (/*moveInput != Vector2.zero*/ Mathf.Abs(moveInput.x) >= MoveStats.MoveThreshold && !isPush && !_isGrapRope /*&& !_isClimping*/)
+        if (/*moveInput != Vector2.zero*/ Mathf.Abs(moveInput.x) >= MoveStats.MoveThreshold && !isPush && !_isGrapRope /*&& !_isClimping*/ && !_isTouchingjumpPadRight && !_isTouchingjumpPadLeft)
         {
             TurnCheck(moveInput);
             anim.SetBool("isMove", true);
@@ -496,6 +545,35 @@ public class AvanceMove : MonoBehaviour
 
             HorizontalVelucity = Mathf.Lerp(HorizontalVelucity, targetVelocity, acceleration * Time.deltaTime);
         }
+
+        else if (_isTouchingjumpPadLeft && Mathf.Abs(moveInput.x) >= MoveStats.MoveThreshold)
+        {
+            VerticalVelocity = verticalForce;
+            HorizontalVelucity = (MoveStats.IntitialJumpVelocity * MoveStats.JumpPadHeightMultiplier * -verticalForce) / 2;
+            //SoundManager.instance.PlaySound(_jumpSound);
+        }
+        else if (_isTouchingjumpPadRight && Mathf.Abs(moveInput.x) >= MoveStats.MoveThreshold)
+        {
+            VerticalVelocity = verticalForce;
+            HorizontalVelucity = (MoveStats.IntitialJumpVelocity * MoveStats.JumpPadHeightMultiplier * verticalForce) / 2;
+            //SoundManager.instance.PlaySound(_jumpSound);
+        }
+
+
+        else if (_isTouchingjumpPadLeft && Mathf.Abs(moveInput.x) < MoveStats.MoveThreshold)
+        {
+            VerticalVelocity = verticalForce;
+            HorizontalVelucity = (MoveStats.IntitialJumpVelocity * MoveStats.JumpPadHeightMultiplier * -verticalForce);
+            //SoundManager.instance.PlaySound(_jumpSound);
+        }
+        else if (_isTouchingjumpPadRight && Mathf.Abs(moveInput.x) < MoveStats.MoveThreshold)
+        {
+            VerticalVelocity = verticalForce;
+            HorizontalVelucity = (MoveStats.IntitialJumpVelocity * MoveStats.JumpPadHeightMultiplier * verticalForce);
+            //SoundManager.instance.PlaySound(_jumpSound);
+        }
+
+
 
         //if (InputManager._climpAIsHeld || InputManager._climpDIsHeld && !_isGrapRope && _isGrounded)
         //{
@@ -631,6 +709,26 @@ public class AvanceMove : MonoBehaviour
             Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2, boxCastOrigin.y - MoveStats.GroundDetectionRayLength), Vector2.right * boxCastSize.x, rayColor);
         }
     }
+
+    //private void JumpPadWhenTouchLeft()
+    //{
+    //    if (_isTouchingjumpPadLeft)
+    //    {
+    //        VerticalVelocity = verticalForce;
+    //        HorizontalVelucity = MoveStats.IntitialJumpVelocity * MoveStats.JumpPadHeightMultiplier * -verticalForce;
+    //        //SoundManager.instance.PlaySound(_jumpSound);
+    //    }
+    //}
+
+    //private void JumpPadWhenTouchRight()
+    //{
+    //    if (_isTouchingjumpPadRight)
+    //    {
+    //        VerticalVelocity = verticalForce;
+    //        HorizontalVelucity = MoveStats.IntitialJumpVelocity * MoveStats.JumpPadHeightMultiplier * verticalForce;
+    //        //SoundManager.instance.PlaySound(_jumpSound);
+    //    }
+    //}
 
     private void JumpPadWhenTouchCheck()
     {

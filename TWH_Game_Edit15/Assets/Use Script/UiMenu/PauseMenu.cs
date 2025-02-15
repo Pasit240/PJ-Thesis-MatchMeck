@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject runMenu;
 
-    public GameObject EndDemo;
+    //public GameObject EndDemo;
 
     //private void Update()
     //{
@@ -20,24 +20,32 @@ public class PauseMenu : MonoBehaviour
     //}
 
     public bool _isPause;
-    public bool _isEndDemo;
+    //public bool _isEndDemo;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            pauseMenu.SetActive(false);
-            EndDemo.SetActive(true);
-            Time.timeScale = 0f;
-            _isEndDemo = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+
+
+
         }
+        //if (collision.CompareTag("Player"))
+        //{
+        //    pauseMenu.SetActive(false);
+        //    EndDemo.SetActive(true);
+        //    Time.timeScale = 0f;
+        //    _isEndDemo = true;
+        //}
     }
 
     private void Start()
     {
         pauseMenu.SetActive(false);
         _isPause = false;
-        EndDemo.SetActive(false);
+        //EndDemo.SetActive(false);
     }
 
     public void Continue()
@@ -58,12 +66,12 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !_isPause && !_isEndDemo)
+        if (Input.GetKeyDown(KeyCode.Escape) && !_isPause /*&& !_isEndDemo*/)
         {
             Puase();
         }
 
-        else if (Input.GetKeyDown(KeyCode.Escape) && _isPause && !_isEndDemo)
+        else if (Input.GetKeyDown(KeyCode.Escape) && _isPause /*&& !_isEndDemo*/)
         {
             Continue();
         }

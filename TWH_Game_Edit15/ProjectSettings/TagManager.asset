@@ -11,6 +11,10 @@ TagManager:
   - Obstacle
   - MovingP
   - Rope
+  - JumpPadLeft
+  - JumpPadRight
+  - SlantJumpPadRight
+  - SlantJumpPadLeft
   layers:
   - Default
   - TransparentFX
