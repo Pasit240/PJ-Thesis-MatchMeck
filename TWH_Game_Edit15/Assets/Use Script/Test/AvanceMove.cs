@@ -100,6 +100,7 @@ public class AvanceMove : MonoBehaviour
     public bool _isTouchingjumpPadRight;
 
     public float verticalForce = 1;
+    public bool _canWallJump = false;
 
     //[SerializeField] private AudioClip _moveSound;
     //[SerializeField] private AudioClip _jumpSound;
@@ -176,7 +177,7 @@ public class AvanceMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle") && isPush)
         {
             box.GetComponent<FixedJoint2D>().enabled = false;
             box.GetComponent<BoxPull>().beingPushed = false;
@@ -220,7 +221,7 @@ public class AvanceMove : MonoBehaviour
             _isTouchingjumpPadRight = false;
         }
 
-        if (collision.gameObject.CompareTag("Obstacle"))
+        else if (collision.gameObject.CompareTag("Obstacle") && isPush)
         {
             box.GetComponent<FixedJoint2D>().enabled = false;
             box.GetComponent<BoxPull>().beingPushed = false;
@@ -1014,7 +1015,7 @@ public class AvanceMove : MonoBehaviour
         _wallJumpTime = 0f;
     }
 
-    private void WallJumpCheck()
+    private void WallJumpCheck()//12
     {
         if (ShouldApplyJumpPostBuffer())
         {
@@ -1040,7 +1041,7 @@ public class AvanceMove : MonoBehaviour
                 }
             }
         }
-        if (InputManager.JumpWasPressed && _isTouchingWall && !_isGrounded && !_isClimping /*&& _wallJumpPastBufferTime > 0f*/)
+        if (InputManager.JumpWasPressed /*&& _isTouchingWall*/ && _canWallJump && !_isGrounded && !_isClimping /*&& _wallJumpPastBufferTime > 0f*/)
         {
             IntiateWallJump();
         }
@@ -1239,7 +1240,8 @@ public class AvanceMove : MonoBehaviour
         {
             //anim.SetBool("isClimp", true);
             //anim.SetBool("isJump", false);
-            _lastWallHit = _walldHit;
+            _canWallJump = true;
+           _lastWallHit = _walldHit;
             _isTouchingWall = true;
             if(!_isGrounded && _isTouchingWall)
             {
@@ -1262,6 +1264,7 @@ public class AvanceMove : MonoBehaviour
         {
             anim.SetBool("isClimp", false);
             _isTouchingWall = false;
+            StartCoroutine(WallJumpDelay(0.2f));
         }
 
         if (MoveStats.DebugShowWallHitBox)
@@ -1324,5 +1327,11 @@ public class AvanceMove : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         _test = false;
+    }
+
+    IEnumerator WallJumpDelay(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        _canWallJump = false;
     }
 }

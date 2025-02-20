@@ -85,6 +85,7 @@
     <Compile Include="Assets\Script\Character\Subcharacter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Script2\DeliveryPoint\DeliveryPoint2.cs" />
+    <Compile Include="Assets\Use Script\Parallax\Parallax2.cs" />
     <Compile Include="Assets\Script2\Door\SecondDoor.cs" />
     <Compile Include="Assets\Script\LoadNext.cs" />
     <Compile Include="Assets\Script2\DeliveryPoint\DeliveryPoint5.cs" />
@@ -119,14 +120,15 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Script2\Ui\TimeScore.cs" />
     <Compile Include="Assets\Use Script\UiMenu\Tutorial\Rope.cs" />
+    <Compile Include="Assets\Use Script\Parallax\NewPalalax.cs" />
     <Compile Include="Assets\Script\Character\Respawns.cs" />
+    <Compile Include="Assets\Use Script\Parallax\Parallax2Layer.cs" />
     <Compile Include="Assets\Script2\PlayerMove\SoundMove.cs" />
     <Compile Include="Assets\Use Script\UiMenu\PauseMenu.cs" />
     <Compile Include="Assets\Script2\DeliveryPoint\DeliveryPoint3.cs" />
     <Compile Include="Assets\Script2\FoliowCamera.cs" />
     <Compile Include="Assets\Script2\Endpoint.cs" />
     <Compile Include="Assets\Script\EnemyAi\OnlyPatrol.cs" />
-    <Compile Include="Assets\Use Script\Palalax\PalalaxManager.cs" />
     <Compile Include="Assets\Use Script\RopeScript\GrabRopeTest.cs" />
     <Compile Include="Assets\Script2\Sound.cs" />
     <Compile Include="Assets\Use Script\Snapping\SnapClimping.cs" />
@@ -169,6 +171,7 @@
     <Compile Include="Assets\Script\Character\EndPause.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Script2\Menu\Timer.cs" />
+    <Compile Include="Assets\Use Script\Parallax\PalalaxManager.cs" />
     <Compile Include="Assets\Script\BoxAndOther\LadderMovement.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Script2\RespawnItem\ReCryan.cs" />
@@ -190,7 +193,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Use Script\Platform\SwingPlatform.cs" />
     <Compile Include="Assets\Script2\Test\Test.cs" />
-    <Compile Include="Assets\Use Script\Palalax\NewPalalax.cs" />
     <Compile Include="Assets\Script2\PickupItem.cs" />
     <Compile Include="Assets\Script2\RespawnItem\ReGreen.cs" />
     <Compile Include="Assets\Use Script\UiMenu\MainMenu.cs" />
@@ -199,6 +201,7 @@
     <Compile Include="Assets\Script2\Menu\GameEnd.cs" />
     <Compile Include="Assets\Script2\PlayerMove\RotateOnly.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\Use Script\Parallax\Parallax2Camera.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
