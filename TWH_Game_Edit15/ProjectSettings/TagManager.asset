@@ -52,3 +52,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Blurground
+    uniqueID: 977039833
+    locked: 0
+  - name: Background 3
+    uniqueID: 2700156213
+    locked: 0
+  - name: Background 2
+    uniqueID: 410216381
+    locked: 0
+  - name: Background 1
+    uniqueID: 3543160901
+    locked: 0
+  - name: MidBackground
+    uniqueID: 1279386773
+    locked: 0
+  - name: Foreground 1
+    uniqueID: 3680100005
+    locked: 0
+  - name: Foreground 2
+    uniqueID: 1431764045
+    locked: 0
