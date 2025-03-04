@@ -486,6 +486,7 @@ public class AvanceMove : MonoBehaviour
         if (_isFacingRight)
         {
             distance = 1f;
+            
         }
         else
         {
@@ -504,6 +505,7 @@ public class AvanceMove : MonoBehaviour
                 box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
                 box.GetComponent<BoxPull>().beingPushed = true;
 
+                anim.SetBool("isIdleCatch", true);
                 isPush = true;
                 _isClimping = false;
                 _isTouchingWall = false;
@@ -511,6 +513,9 @@ public class AvanceMove : MonoBehaviour
             }
             else if (InputManager.GrabWasPressed && isPush == true)
             {
+                anim.SetBool("isIdleCatch", false);
+                anim.SetBool("isPush", false);
+                anim.SetBool("isPull", false);
                 box.GetComponent<FixedJoint2D>().enabled = false;
                 box.GetComponent<BoxPull>().beingPushed = false;
                 isPush = false;
@@ -540,7 +545,7 @@ public class AvanceMove : MonoBehaviour
         {
             TurnCheck(moveInput);
             anim.SetBool("isMove", true);
-
+            anim.SetBool("isIdleCatch", false);
             float targetVelocity;
             targetVelocity = moveInput.x * MoveStats.MoveSpeed;
 
@@ -584,11 +589,54 @@ public class AvanceMove : MonoBehaviour
         else if (Mathf.Abs(moveInput.x) >= MoveStats.MoveThreshold && isPush && _isGrounded && !_isGrapRope/*&& !_isClimping*/)
         {
             TurnCheck(moveInput);
-            //anim.SetBool("isMove", true);
-
+            anim.SetBool("isMove", true);
+            anim.SetBool("isIdleCatch", false);
             float targetVelocity;
             targetVelocity = moveInput.x * MoveStats.MoveSpeed/2;
             HorizontalVelucity = Mathf.Lerp(HorizontalVelucity, targetVelocity, acceleration/2 * Time.deltaTime);
+
+            if (_isFacingRight)
+            {
+                if (InputManager._climpDIsHeld)
+                {
+                    anim.SetBool("isPush", false);
+                    anim.SetBool("isPull", true);
+                }
+                
+                else if (InputManager._climpAIsHeld)
+                {
+                    anim.SetBool("isPush", true);
+                    anim.SetBool("isPull", false);
+                }                               
+            }
+            else if (!_isFacingRight)
+            {
+                if (InputManager._climpDIsHeld)
+                {
+                    anim.SetBool("isPush", true);
+                    anim.SetBool("isPull", false);
+                }
+
+                //else if (InputManager._climpAIsHeld)
+                //{
+                //    anim.SetBool("isPush", false);
+                //    anim.SetBool("isPull", true);                    
+                //}
+            }
+            else
+            {
+                anim.SetBool("isPush", false);
+                anim.SetBool("isPull", false);
+                anim.SetBool("isIdleCatch", true);
+            }
+
+        }
+
+        else if (/*moveInput == Vector2.zero*/ Mathf.Abs(moveInput.x) < MoveStats.MoveThreshold && isPush && !_isClimping && !_isGrapRope)
+        {
+            HorizontalVelucity = Mathf.Lerp(HorizontalVelucity, 0f, deceleration * Time.deltaTime * 3);
+            anim.SetBool("isMove", false);
+            anim.SetBool("isIdleCatch", true);
         }
 
         else if (/*moveInput == Vector2.zero*/ Mathf.Abs(moveInput.x) < MoveStats.MoveThreshold && !_isClimping && !_isGrapRope)
