@@ -98,6 +98,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenDebug"",
+                    ""type"": ""Button"",
+                    ""id"": ""70c59e08-a464-4d2c-9bfd-fc59421aafc6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -342,6 +351,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""ClimpMoveLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ede63aeb-1526-4722-9428-f71ea734d72c"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenDebug"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -358,6 +378,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_ClimpMoveDown = m_Player.FindAction("ClimpMoveDown", throwIfNotFound: true);
         m_Player_ClimpMoveRight = m_Player.FindAction("ClimpMoveRight", throwIfNotFound: true);
         m_Player_ClimpMoveLeft = m_Player.FindAction("ClimpMoveLeft", throwIfNotFound: true);
+        m_Player_OpenDebug = m_Player.FindAction("OpenDebug", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -427,6 +448,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_ClimpMoveDown;
     private readonly InputAction m_Player_ClimpMoveRight;
     private readonly InputAction m_Player_ClimpMoveLeft;
+    private readonly InputAction m_Player_OpenDebug;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -439,6 +461,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @ClimpMoveDown => m_Wrapper.m_Player_ClimpMoveDown;
         public InputAction @ClimpMoveRight => m_Wrapper.m_Player_ClimpMoveRight;
         public InputAction @ClimpMoveLeft => m_Wrapper.m_Player_ClimpMoveLeft;
+        public InputAction @OpenDebug => m_Wrapper.m_Player_OpenDebug;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -472,6 +495,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ClimpMoveLeft.started += instance.OnClimpMoveLeft;
             @ClimpMoveLeft.performed += instance.OnClimpMoveLeft;
             @ClimpMoveLeft.canceled += instance.OnClimpMoveLeft;
+            @OpenDebug.started += instance.OnOpenDebug;
+            @OpenDebug.performed += instance.OnOpenDebug;
+            @OpenDebug.canceled += instance.OnOpenDebug;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -500,6 +526,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ClimpMoveLeft.started -= instance.OnClimpMoveLeft;
             @ClimpMoveLeft.performed -= instance.OnClimpMoveLeft;
             @ClimpMoveLeft.canceled -= instance.OnClimpMoveLeft;
+            @OpenDebug.started -= instance.OnOpenDebug;
+            @OpenDebug.performed -= instance.OnOpenDebug;
+            @OpenDebug.canceled -= instance.OnOpenDebug;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -527,5 +556,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnClimpMoveDown(InputAction.CallbackContext context);
         void OnClimpMoveRight(InputAction.CallbackContext context);
         void OnClimpMoveLeft(InputAction.CallbackContext context);
+        void OnOpenDebug(InputAction.CallbackContext context);
     }
 }

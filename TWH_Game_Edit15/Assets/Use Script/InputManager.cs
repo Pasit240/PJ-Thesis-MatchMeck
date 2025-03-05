@@ -34,6 +34,9 @@ public class InputManager : MonoBehaviour
     public static bool _climpAWasPressed;
     public static bool _climpDWasPressed;
 
+    private InputAction _openDebug;
+    public static bool _isDebugOpen;
+
     private void Awake()
     {
         PlayerInput = GetComponent<PlayerInput>();
@@ -49,6 +52,8 @@ public class InputManager : MonoBehaviour
         _climpA = PlayerInput.actions["ClimpMoveLeft"];
         _climpD = PlayerInput.actions["ClimpMoveRight"];
 
+
+        _openDebug = PlayerInput.actions["OpenDebug"];
     }
 
     private void Update()
@@ -70,6 +75,9 @@ public class InputManager : MonoBehaviour
 
         _climpAWasPressed = _climpA.WasPressedThisFrame();
         _climpDWasPressed = _climpD.WasPressedThisFrame();
+
+
+        _isDebugOpen = _openDebug.WasPressedThisFrame();
 
 
         //RunIsHeld = _runAction.IsPressed();
