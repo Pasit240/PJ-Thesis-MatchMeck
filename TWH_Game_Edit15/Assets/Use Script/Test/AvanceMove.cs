@@ -729,7 +729,7 @@ public class AvanceMove : MonoBehaviour
     private void IsJumpPad()
     {
         Vector2 boxCastOrigin = new(_feetColl.bounds.center.x, _feetColl.bounds.min.y);
-        Vector2 boxCastSize = new(_feetColl.bounds.size.x, MoveStats.GroundDetectionRayLength);
+        Vector2 boxCastSize = new(_feetColl.bounds.size.x *1.2f, MoveStats.GroundDetectionRayLength);
 
         _jumpPadHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.down, MoveStats.GroundDetectionRayLength, MoveStats.JumpPadLayerMask);
         if (_jumpPadHit.collider != null)
