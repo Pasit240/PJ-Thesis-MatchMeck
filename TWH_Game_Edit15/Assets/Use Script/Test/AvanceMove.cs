@@ -226,6 +226,7 @@ public class AvanceMove : MonoBehaviour
             box.GetComponent<FixedJoint2D>().enabled = false;
             box.GetComponent<BoxPull>().beingPushed = false;
             isPush = false;
+            anim.SetBool("isIdleCatch", false);
         }
     }
 
@@ -617,18 +618,18 @@ public class AvanceMove : MonoBehaviour
                     anim.SetBool("isPull", false);
                 }
 
-                //else if (InputManager._climpAIsHeld)
-                //{
-                //    anim.SetBool("isPush", false);
-                //    anim.SetBool("isPull", true);                    
-                //}
+                else if (InputManager._climpAIsHeld)
+                {
+                    anim.SetBool("isPush", false);
+                    anim.SetBool("isPull", true);
+                }
             }
-            else
-            {
-                anim.SetBool("isPush", false);
-                anim.SetBool("isPull", false);
-                anim.SetBool("isIdleCatch", true);
-            }
+            //else
+            //{
+            //    anim.SetBool("isPush", false);
+            //    anim.SetBool("isPull", false);
+            //    anim.SetBool("isIdleCatch", true);
+            //}
 
         }
 
