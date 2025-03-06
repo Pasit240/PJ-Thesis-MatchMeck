@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RespawnsTest : MonoBehaviour
 {
-    [SerializeField] Animator transitionRe;
+    public Animator anim;
 
     public bool respawnActive;
 
@@ -19,6 +19,7 @@ public class RespawnsTest : MonoBehaviour
     private void Start()
     {
         checkpointPos = transform.position;
+        anim.SetBool("Die", false);
     }
 
     public void UpdateCheckpoint(Vector2 pos)
@@ -37,29 +38,30 @@ public class RespawnsTest : MonoBehaviour
         else
         {
             respawnActive = false;
+            anim.SetBool("Die", false);
         }
     }
 
     void Die()
     {
-        StartCoroutine(TimeCount(1f));
-        StartCoroutine(Respawn(3f));
+        StartCoroutine(TimeCount(0f));
+        StartCoroutine(Respawn(2f));
     }
 
     IEnumerator TimeCount(float duration)
     {
-        transitionRe.SetTrigger("Start");
+        anim.SetBool("Die", true);
         yield return new WaitForSeconds(duration);
-        transitionRe.SetTrigger("Respawn");
     }
 
     IEnumerator Respawn(float duration)
     {
         playerRb.simulated = false;
-        transform.localScale = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(duration);
+        transform.localScale = new Vector3(0, 0, 0);
+        //yield return new WaitForSeconds(duration);
         transform.position = checkpointPos;
-        transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
+        transform.localScale = new Vector3(1, 1, 1);
         playerRb.simulated = true;
     }
 }
