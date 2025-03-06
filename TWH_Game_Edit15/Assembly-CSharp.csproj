@@ -65,6 +65,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Use Script\UiMenu\Tutorial\Move.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\Use Script\Debug\DebugTele.cs" />
     <Compile Include="Assets\Script2\DeliveryPoint\DeliveryPoint6.cs" />
     <Compile Include="Assets\Script2\RespawnItem\RePurple.cs" />
     <Compile Include="Assets\Use Script\UiMenu\Tutorial\jump.cs" />
@@ -183,6 +184,7 @@
     <Compile Include="Assets\Script\Character\FallingPlatform.cs" />
     <Compile Include="Assets\Script2\Menu\SettingMenu.cs" />
     <Compile Include="Assets\Script\BoxAndOther\Checkpoint.cs" />
+    <Compile Include="Assets\Use Script\Debug\DebugOpen.cs" />
     <Compile Include="Assets\Use Script\Jumppad no use\Jumppad.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Script\BoxAndOther\Winning.cs" />
