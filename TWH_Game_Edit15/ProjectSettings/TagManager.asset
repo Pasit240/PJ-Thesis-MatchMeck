@@ -15,6 +15,11 @@ TagManager:
   - JumpPadRight
   - SlantJumpPadRight
   - SlantJumpPadLeft
+  - EMove
+  - EJump
+  - EFall
+  - EAir
+  - EClimp
   layers:
   - Default
   - TransparentFX

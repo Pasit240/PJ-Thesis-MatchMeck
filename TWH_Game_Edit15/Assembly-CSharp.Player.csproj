@@ -72,10 +72,12 @@
     <Compile Include="Assets\Platform\Materials\ParallaxController.cs" />
     <Compile Include="Assets\Script\EnemyAi\EnemyPatrol.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
+    <Compile Include="Assets\Use Script\EnemyTest\EnemyDeSpawn.cs" />
     <Compile Include="Assets\Script\EnemyAi\EnemyMove.cs" />
     <Compile Include="Assets\Use Script\UiMenu\Tutorial\JumpB.cs" />
     <Compile Include="Assets\Script\EnemyAi\AiPlayerDetector.cs" />
     <Compile Include="Assets\Script\EnemyAi\AiPlayerEnterAreaDetector.cs" />
+    <Compile Include="Assets\Use Script\EnemyTest\EnemySpawnTest.cs" />
     <Compile Include="Assets\Use Script\Platform\InVerseST.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Script\BoxAndOther\CameraFollow.cs" />
@@ -120,6 +122,7 @@
     <Compile Include="Assets\Use Script\Platform\FnSwing.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Script2\Ui\TimeScore.cs" />
+    <Compile Include="Assets\Use Script\EnemyTest\EnemyFly.cs" />
     <Compile Include="Assets\Use Script\UiMenu\Tutorial\Rope.cs" />
     <Compile Include="Assets\Use Script\Parallax\NewPalalax.cs" />
     <Compile Include="Assets\Script\Character\Respawns.cs" />
@@ -173,6 +176,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Script2\Menu\Timer.cs" />
     <Compile Include="Assets\Use Script\Parallax\PalalaxManager.cs" />
+    <Compile Include="Assets\Use Script\EnemyTest\EnemyRat.cs" />
     <Compile Include="Assets\Script\BoxAndOther\LadderMovement.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Script2\RespawnItem\ReCryan.cs" />
