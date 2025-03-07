@@ -383,8 +383,8 @@ public class AvanceMove : MonoBehaviour
         {
             //SoundManager.instance.PlaySound(_jumpSound);
             Detach();
-            HorizontalVelucity = Mathf.Abs(MoveStats.WallJumpDirection.x) * dirMultiplier * 1.0f;
-            VerticalVelocity = Mathf.Abs(MoveStats.WallJumpDirection.y) * 1.3f;
+            HorizontalVelucity = Mathf.Abs(MoveStats.WallJumpDirection.x) * dirMultiplier * 1.2f;
+            VerticalVelocity = Mathf.Abs(MoveStats.WallJumpDirection.y) * 1.5f;
         }
     }
 
@@ -556,13 +556,13 @@ public class AvanceMove : MonoBehaviour
         else if (_isTouchingjumpPadLeft && Mathf.Abs(moveInput.x) >= MoveStats.MoveThreshold)
         {
             VerticalVelocity = verticalForce;
-            HorizontalVelucity = (MoveStats.IntitialJumpVelocity * MoveStats.JumpPadHeightMultiplier * -verticalForce) / 2;
+            HorizontalVelucity = (MoveStats.IntitialJumpVelocity * MoveStats.JumpPadHeightMultiplier * -verticalForce) / 5;
             //SoundManager.instance.PlaySound(_jumpSound);
         }
         else if (_isTouchingjumpPadRight && Mathf.Abs(moveInput.x) >= MoveStats.MoveThreshold)
         {
             VerticalVelocity = verticalForce;
-            HorizontalVelucity = (MoveStats.IntitialJumpVelocity * MoveStats.JumpPadHeightMultiplier * verticalForce) / 2;
+            HorizontalVelucity = (MoveStats.IntitialJumpVelocity * MoveStats.JumpPadHeightMultiplier * verticalForce) / 5f;
             //SoundManager.instance.PlaySound(_jumpSound);
         }
 

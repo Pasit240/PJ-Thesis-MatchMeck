@@ -61,7 +61,7 @@ public class RespawnsTest : MonoBehaviour
         transform.localScale = new Vector3(0, 0, 0);
         //yield return new WaitForSeconds(duration);
         transform.position = checkpointPos;
-        transform.localScale = new Vector3(1, 1, 1);
+        transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
         playerRb.simulated = true;
     }
 }
