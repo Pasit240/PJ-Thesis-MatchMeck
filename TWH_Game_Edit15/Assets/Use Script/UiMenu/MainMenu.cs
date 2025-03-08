@@ -7,9 +7,9 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {      
-        SceneManager.LoadScene("Map01");//ถ้ามี Cut Scene ใส่ชชื่อ Scene ที่มี Cut Scene แทนตรงในวงเล็บอันนี้
+        SceneManager.LoadScene("CutScene");//ถ้ามี Cut Scene ใส่ชชื่อ Scene ที่มี Cut Scene แทนตรงในวงเล็บอันนี้
         Time.timeScale = 1f;//อันนี้ไม่ต้องยุ่ง
-
+        StartCoroutine(DelaySce(40f));
         //StartCoroutine(GameStart());//ถ้ามี Cut Scene เปิดอันนี้ด้วย
     }
 
@@ -25,6 +25,12 @@ public class MainMenu : MonoBehaviour
     //    SceneManager.LoadScene("Map02");
     //    Time.timeScale = 1f;
     //}   
+
+    IEnumerator DelaySce(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        SceneManager.LoadScene("Map01");
+    }
 
     public void QuitGame()
     {
