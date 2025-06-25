@@ -8,9 +8,9 @@ public class qwer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(DelaySce(40f));
+        StartCoroutine(DelaySce(39.5f));
 
-        
+
     }
 
     public void Update()
@@ -20,7 +20,7 @@ public class qwer : MonoBehaviour
             Skip();
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Skip();
         }
