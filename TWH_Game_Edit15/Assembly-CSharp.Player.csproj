@@ -96,7 +96,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Script2\RespawnItem\ReBlue.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
-    <Compile Include="Assets\Script\EnemyAi\Enemy.cs" />
     <Compile Include="Assets\Script\EnemyAi\EnemyRatAi.cs" />
     <Compile Include="Assets\Use Script\InputManager.cs" />
     <Compile Include="Assets\Script2\Door\ThirdDoor.cs" />

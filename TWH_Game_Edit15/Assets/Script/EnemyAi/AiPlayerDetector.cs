@@ -53,10 +53,12 @@ public class AiPlayerDetector : MonoBehaviour
         if (collider != null)
         {
             target = collider.gameObject;
+            PlayerDetected = true;
         }
         else
         {
             Target = null;
+            PlayerDetected = false;
         }
     }
 
