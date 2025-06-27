@@ -8,7 +8,7 @@ public class qwer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(DelaySce(39.5f));
+        StartCoroutine(DelaySce(30.5f));
 
 
     }

@@ -7,7 +7,7 @@ public class zxcv : MonoBehaviour
 {
     void Start()
     {
-        StartCoroutine(DelaySce(5f));
+        StartCoroutine(DelaySce(9.0f));
     }
 
     IEnumerator DelaySce(float duration)
