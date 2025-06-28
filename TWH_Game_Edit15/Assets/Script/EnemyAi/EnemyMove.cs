@@ -13,6 +13,11 @@ public class EnemyMove : MonoBehaviour
     public float chaseDistance1;
     public float chaseDistance2;
 
+    public float _jumpForce = 7;
+    public LayerMask groundLayerMask;
+
+
+
     private void Update()
     {
         if (isCasing)

@@ -27,7 +27,22 @@ public class RespawnsTest : MonoBehaviour
         checkpointPos = pos;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Obstacle"))
+        {
+            Die();
+            respawnActive = true;
+        }
+
+        else
+        {
+            respawnActive = false;
+            anim.SetBool("Die", false);
+        }
+    }
+
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Obstacle"))
         {
